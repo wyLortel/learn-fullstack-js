@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Event Bubbling</title>
+    <style>
+        body * {
+            margin: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+ 
+<body>
+    <form>FORM
+        <div>DIV
+            <p>P</p>
+        </div>
+    </form>
+    <script>
+        for (let elemet of document.querySelectorSAll("*")){
+            elemet.addEventListener("click" , e=> alert(`캡퍼링 ${elemet.tagName} , true`))
+            elemet.addEventListener("click" ,e=> alert(`버블링 ${elemet.tagName}`))
+        }
+    </script>
+</body>
+ 
+</html>
