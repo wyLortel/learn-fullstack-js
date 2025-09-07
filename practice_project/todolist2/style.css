@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* :root { ... }는 문서의 최상위(html 요소)
+ 여기서 만든 변수는 어디서든 var()로 가져다 쓸 수 있어. */
+:root {
+    --background-color: #000430;
+    --secondaryBackground:#171c48;
+    --text: #fff;
+    --purple: #828dff;
+    --teal: #24feee;
+}
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.status-container{
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--purple);
+    display: flex;
+    gap:30px
+
+}
+
+
+#progreassBar {
+    width: 100%;
+    height: 100px;
+    background-color: var(--purple);
+}
+
+
+#numbers{
+    width: 100px;
+    height: 100px;
+    background-color: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
