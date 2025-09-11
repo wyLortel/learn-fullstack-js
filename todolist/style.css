@@ -111,8 +111,12 @@ h1 {
      margin: 20px 0px 20px 50px;
 }
 
+
+
+
 #todo-form{
     text-align: center;
+    margin-top: 20px;
 
 }
 
@@ -162,13 +166,13 @@ h1 {
 
 .timer-text {
     width: 20%;
-    white-space : nowrap
+    white-space : nowrap;
 }
 
 
 .icon-box {
     width: 40%;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .icon-box a img {
@@ -181,14 +185,82 @@ h1 {
     display: flex;
     justify-content: space-between;
     margin-left: 40px;
+
 }
 
 
 .goal{
     border: 2px solid #383838 ;
-    width: 40%;
+    width: 50%;
+    height: 500px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
 }
+
+
+.date-circle {
+    height: 300px;
+    width: 300px;
+    
+    border: 2px solid #383838 ;
+    border-radius: 1000px;
+}
+
+
+.date-circle p {
+    font-size: 90px;
+    margin-top: 20px;
+}
+
+.date-circle h3{
+    text-align: center;
+    margin-top: 40px;
+}
+
 
 .date {
     width: 40%;
+    margin-right: 40px;
+}
+
+.date p  {
+    text-align: center;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+.goal h3 {
+    text-align: center;
+    padding: 0px 0px 20px 0px;
+    border-bottom: #383838 2px double;
+    
+}
+
+
+ol{
+    margin-top: 90px;
+}
+
+ol li {
+    margin-top: 30px;
+}
+
+ul{
+    display: flex;
+}
+
+.todo-text {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.deletBtn{
+    margin-left: 10px;
+}
+
+#tens {
+    margin-right: 6px;
 }

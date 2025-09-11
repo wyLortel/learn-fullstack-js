@@ -51,20 +51,22 @@
 
         <div class="main-box">
             <div class="text">
-                <ul id="todo-list">
-                    <li class="todo=item"></li>
-                </ul>
                 <form id="todo-form">
-                    <input type="text" id="todo-input" placeholder=" What is the plan? ">
+                    <input type="text" id="todo-input" placeholder=" What is the plan?">
                     <button type="submit" id="sumbit-btn">Add</button>
                 </form>
+
+                 <ul id="todo-list">
+        
+                </ul>
+
             </div>
 
 
             <div class="all-box">
                 <div class="timer-box">
                         <div class="timer">
-                            1
+                            <p><span id="seconds">0</span>:<span id="tens">0</span>sec</p>
                         </div>
                         <div class="timer-text">
                             <h3>My study time so far</h3>
@@ -72,27 +74,38 @@
                             <p>"Keep it up!.</p>
                         </div>
                         <div class="icon-box">
-                            <a href=""><img src="img/再生ボタン (1).png" alt="" width="50px" height="50px"></a>
-                            <a href=""><img src="img/再生停止ボタン.png" alt=" " width="50px" height="50px"></a>
+                            <a href="" id="play"><img src="img/再生ボタン (1).png" alt="" width="50px" height="50px"></a>
+                            <a href="" id="stop"><img src="img/再生停止ボタン.png" alt=" " width="50px" height="50px"></a>
+                            <a href="" id="reset"><img src="img/リピートボタンアイコン4.png" alt=" " width="50px" height="50px"></a>
                         </div>
                     </div>
 
                 <div class="last-box">
-                    <div class="goal">1
-                        <ul>
-                            <li></li>
-                        </ul>
+                    <div class="goal">
+                        <h3>GOAL!</h3>
+                        <ol>
+                            <li>Learn React basics</li>
+                            <li>Build a simple web app on your own</li>
+                            <li>Try React Native clone coding</li>
+                            <li>Do Node.js backend clone coding</li>
+        
+                        </ol>
                     </div>
                     <div class="date">
-                        <div class="date-circle"></div>
+                        <div class="date-circle">
+                            <h3>september</h3>
+                            <p>10</p>
+                        </div>
                         <p>CALENDAR</p>
+                        <p>Let's cheer up</p>
                     </div>
                 </div>
                 </div>
             </div>
+            <p class="footer-text">"One day or day one."</p>
         </div>
 
-
+    <script src="app.js"></script>
 
     </div>
 
