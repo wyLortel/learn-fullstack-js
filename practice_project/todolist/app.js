@@ -95,15 +95,65 @@ fetchTodos();
 renderTodos();
 
 //타이머
-const appendSeconds = document.getElementById("seconds");
-const appendTens = document.getElementById("tens")
-const timerPlay = document.getElementById("start")
-const timerStop = document.getElementById("stop")
-const timerReset = document.getElementById("reset")
+
+document.addEventListener('DOMContentLoaded', () => {
+  const secondsEl = document.getElementById('seconds');
+  const play  = document.getElementById('play');
+  const stop  = document.getElementById('stop');
+  const reset = document.getElementById('reset');
 
 
-let second = 0;
-let tens = 0;
-let interval;
+  let seconds = 0;
+  let timerId = null;
+
+  const pad2 = n => String(n).padStart(2, '0');
+  const tick = () => {
+    seconds++;
+    secondsEl.textContent = pad2(seconds);
+  };
+
+  const start = (e) => {
+    if (timerId) return;           
+    timerId = setInterval(tick, 1000);  
+  };
+  const pause = (e) => {
+
+    if (!timerId) return;
+    clearInterval(timerId);
+    timerId = null;
+  };
+  const resetAll = (e) => {
+
+    pause();
+    seconds = 0;
+    secondsEl.textContent = '00';
+  };
+
+  play.addEventListener('click', start);
+  stop.addEventListener('click', pause);
+  reset.addEventListener('click', resetAll);
+});
+
+
+//날짜
+
+const now = new Date();
+
+const monthAbbr = now.toLocaleString("en-US", { month: "short" });
+
+const today = {
+  date: now.getDate(),
+  month: monthAbbr,
+  day: now.toLocaleString()
+};
+
+
+const monthEl = document.querySelector(".date-circle h3");
+monthEl.textContent = today.month;
+
+
+const dateEl = document.querySelector(".date-circle p");
+dateEl.textContent = today.date;
+
 
 

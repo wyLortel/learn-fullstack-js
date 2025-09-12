@@ -175,8 +175,13 @@ h1 {
     margin-left: 10px;
 }
 
-.icon-box a img {
+.icon-box button img {
     margin-left: 10px;
+}
+
+.icon-box button{
+  border: 0;
+  background-color: transparent;
 }
 
 
