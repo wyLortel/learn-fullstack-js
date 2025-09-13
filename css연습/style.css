@@ -2,6 +2,8 @@
     width: 200px;
     height: 200px;
     background-color: tomato ;
+    color: aliceblue;
+    font-size: 36px;
 }
 
 /* .box:first-child{
@@ -13,7 +15,11 @@
     margin-left: 25%;
 }  */
 
-body{
+.father{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 10px;
 }
+
+
+
