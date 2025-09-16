@@ -1,29 +1,6 @@
-.find-icons {
-    display: flex;
-    justify-content: space-between;
-
-    
-}
-
 
 .find-header{
     margin-bottom: 40px;
-}
-
-
-.find_icons__icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.find_icons__icon i {
-    font-size: 35px;
-}
-
-.find_icons__icon span {
-    margin-top: 30px;
 }
 
 .recommended-friends {
@@ -81,7 +58,6 @@
 
 .open-post__hashtags{
     text-transform: uppercase;
-    margin: 5px;
     opacity: 0.6;
 }
 

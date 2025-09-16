@@ -1,0 +1,40 @@
+.wrap {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 100px;
+    padding-bottom: 40px;
+    border-bottom: var(--main--border);
+}
+
+
+.more-suggestions{
+    margin-top: 40px ;
+}
+
+.more-suggestions__title{
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+
+.more-suggestions__icons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.more-suggestions__icon-image img{
+    width: 60px;
+    height: 60px;
+}
+
+.more-suggestions__icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.more-suggestions__icon-image{
+    margin-bottom: 10px;
+}
