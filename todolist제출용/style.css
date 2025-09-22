@@ -1,0 +1,104 @@
+body {
+    background-image: url(https://i.pinimg.com/originals/6d/7d/9b/6d7d9bb3170c114bf6a8c7fc87274d88.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+header h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 50px;
+    color: #fff;
+}
+
+.list-box{
+    max-width: 1080px;
+    margin: 0 auto;
+    background-color: rgba(245, 245, 245, 0.7);
+    height:720px;
+    border-radius: 50px;
+    padding: 8px 0px;
+}
+
+.btn-box{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#add_btn{
+    display: inline-block;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 100px;
+    background-color: rgb(147, 185, 255);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.todo-lists__todobox {
+    padding: 10px 0px;
+    border-bottom: solid 3px rgb(101, 155, 255);
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.todobox-input{
+
+    background-color:  rgba(245, 245, 245, 0.9);
+    width: 70%;
+    padding: 15px 0px;
+    border-radius: 100px;
+}
+
+input:focus {outline: none;}
+
+.action{
+    display: flex;
+    gap: 8px;
+    width: 20%;
+}
+
+.action button{
+    display: inline-block;
+    padding: 4px 20px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.action button:first-child{
+    background-color: rgb(252, 137, 137);
+    color: #fff;
+}
+
+.action button:last-child{
+    background-color: rgb(92, 92, 253);
+    color: #fff;
+}
+
+
+
+
+input[type="text"] {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+input[type="checkbox"]{
+width: 20px; 
+height: 20px; 
+}
