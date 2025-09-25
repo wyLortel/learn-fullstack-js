@@ -1,29 +1,41 @@
-import { useState , useEffect } from "react";
+import { useState } from "react";
+
+
+
 
 function App() {
-  const [counter , setValue] = useState(0);
-  const [keyword , setKeyword ] = useState("")
-  const Onclick = () => setValue((prev) => prev + 1);
-  const onChange = (event) => setKeyword(event.target.value);
-  console.log("i run all the time");
-  useEffect(() => {
-    console.log("Call the api");
-  }, [] );
-
-
-  useEffect(()=>{
-    if (keyword !== "" && keyword.length > 5){
-      console.log("SEARCH FOR", keyword);
+  
+  const [toDo,setToDo] = useState("");
+  const[toDos , setToDos] = useState([]);
+  const onChange = (event) => setToDo(event.target.value);
+  const onSubmit = (event) => { 
+    event.preventDefault();
+    if(toDo === ""){
+      return;
     }
-  },[keyword]);
+    setToDos(currentArray => [toDo , ...currentArray ]); //... 배열을 풀어서 나열하는 문법 신기쓰
+    setToDo("") //제출후 초기화?
+  }
+  
+  console.log(toDos);
 
-    
-  return (
-    <div>
-      <input onChange={onChange} type="text" value={keyword} placeholder="Search here..."/>
-      <h1>{counter}</h1>
-      <button onClick={Onclick}>click me</button>
-      </div>
+  return(
+   <div>
+      <form onSubmit={onSubmit}>
+        <input onChange={onChange} 
+        value={toDo} 
+        type="text" 
+        placeholder="Wtie your to do..">
+        </input>
+        <button>Add To Do</button>
+      </form>
+      <hr />
+      <ul>
+        {toDos.map((item) => ( 
+          <li>{item}</li>
+          ))}
+      </ul>
+   </div>
   );
 }
 
