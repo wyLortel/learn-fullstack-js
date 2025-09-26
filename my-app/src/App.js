@@ -1,42 +1,33 @@
-import { useState } from "react";
-
-
-
+import { useState, useEffect } from "react";
 
 function App() {
-  
-  const [toDo,setToDo] = useState("");
-  const[toDos , setToDos] = useState([]);
-  const onChange = (event) => setToDo(event.target.value);
-  const onSubmit = (event) => { 
-    event.preventDefault();
-    if(toDo === ""){
-      return;
-    }
-    setToDos(currentArray => [toDo , ...currentArray ]); //... 배열을 풀어서 나열하는 문법 신기쓰
-    setToDo("") //제출후 초기화?
-  }
-  
-  console.log(toDos);
+  const [loading, setLoading] = useState(true);
+  const [coins, setCoins] = useState([]);
 
-  return(
-   <div>
-      <form onSubmit={onSubmit}>
-        <input onChange={onChange} 
-        value={toDo} 
-        type="text" 
-        placeholder="Wtie your to do..">
-        </input>
-        <button>Add To Do</button>
-      </form>
-      <hr />
+  useEffect(() => {
+    fetch("https://api.coinpaprika.com/v1/tickers")
+      .then((response) => response.json())
+      .then((json) => {
+        setCoins(json);
+        setLoading(false);
+      });
+  }, []);
+
+  return (
+    <div>
+      <h1>The Coins! ({coins.length})</h1>
+      {loading ? <strong>Loading...</strong> : null}
       <ul>
-        {toDos.map((item) => ( 
-          <li>{item}</li>
-          ))}
+        {coins.map((coin) => (
+          <li key={coin.id}>
+            {coin.name} ({coin.symbol}) : ${coin.quotes.USD.price} USD
+          </li>
+        ))}
       </ul>
-   </div>
+    </div>
   );
 }
 
 export default App;
+
+
