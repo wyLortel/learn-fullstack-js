@@ -5,14 +5,9 @@ import Form from "./components/Form";
 
 export default function App() {
 
-
-
+  const initialTodoData = localStorage.getItem("toDoData") ? JSON.parse(localStorage.getItem("toDoData")) : [];
   // state 정의
-  const [toData, setTodoData] = useState([
-    { id: 1, title: "공부하기", completed: false },
-    { id: 2, title: "운동하기", completed: false },
-    { id: 3, title: "코딩하기", completed: false },
-  ]);
+  const [toData, setTodoData] = useState(initialTodoData);
 
   const [value, setValue] = useState("");
 
@@ -31,6 +26,7 @@ export default function App() {
     };
 
     setTodoData([...toData, newTodo]);
+    localStorage.setItem('toDoData' , JSON.stringify([...toData, newTodo]))
     setValue("");
   };
 
