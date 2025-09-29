@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import requests from "../api/request";  
 import axios from "../api/axios";
 import "./Banner.css";
+//스타일 컴포넌트를 사용한다는 라이브러리
+import styled from "styled-components";
 
 //export default로 다른 파일에서 import를 붙여 사용하는게 가능 
 export default function Banner() {
@@ -11,6 +13,8 @@ export default function Banner() {
   const [movie, setMovie] = useState({}); 
   
   const [isClicked, setIsClicked] = useState(false);
+
+
 
   //리액트가 화면에 컴포넌트를처음 그렷을때 실행됨 이걸 마운트라고 함
   useEffect(() => {
@@ -52,7 +56,10 @@ export default function Banner() {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str; //.substr()문자열 자르기 메서드 문자열.substr(시작위치, 길이)
   };
 
-  return (
+  //클릭을 안하면 원래 정적 화면을 보여줌 
+  if(!isClicked){
+     return (
+
     <header
       className="banner"
       style={{
@@ -67,7 +74,7 @@ export default function Banner() {
 
         {/* 버튼들 */}
         <div className="banner__buttons">
-          <button className="banner_button play">Play</button>
+          <button className="banner_button play" onClick={() => setIsClicked(true)}>Play</button>
           <button className="banner_button info">More Information</button>
         </div>
 
@@ -78,5 +85,58 @@ export default function Banner() {
       </div>
     </header>
   );
+
+  //클릭을 해서 true가 되엇을때 
+  } else{
+    return(
+      <Container>
+        <HomeContainer>
+          <Iframe
+            src={`https://www.youtube.com/embed/${movie.videos.results[0].key}
+              ?controls=0&autoplay=1&loop=1&mute=1&playlist=${movie.videos.results[0].key}`}
+            width="640"
+            height="360"
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+          ></Iframe>
+        </HomeContainer>
+      </Container>
+    )
+  }
+
+ 
 }
-//overview 이게 상세 정보 
+
+const Iframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.65;
+  border: none;
+
+  //::after CSS의 가상 요소(pseudo-element) 중 하나.어떤 요소의 "마지막 자식"처럼 동작해서, 거기에 추가적인 콘텐츠나 장식을 붙일 수 잇음 content: "" → 빈 텍스트지만 요소가 생김 (눈엔 안 보여도 "틀" 있음).
+
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+`
+
+
+const Container = styled.div`
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width : 100%;
+  height: 100vh; //vh /* 브라우저 창 세로 크기 100% */
+`
+
+const HomeContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`
