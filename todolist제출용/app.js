@@ -83,7 +83,6 @@
 
 
 
-
   function setLocalStorage(){
     const data = JSON.stringify(todos);
     localStorage.setItem(localkey, data); 

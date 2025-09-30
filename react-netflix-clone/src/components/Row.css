@@ -8,6 +8,8 @@ h2 {
 .slider {
   position: relative;
 }
+/* background-clip: content-box; 배경을 컨텐츠 영역 안쪽까지만 칠해라는 의미 */
+/* visibility: hidden; 은 요소를 보이지 않게 하지만, 레이아웃(자리)은 그대로 차지하는 속성 */
 .slider__arrow-left {
   background-clip: content-box;
   padding: 20px 0;
@@ -49,6 +51,8 @@ h2 {
   transition: 400ms all ease-in-out;
   transform: scale(1.5);
 }
+
+/* visibility: visible; → 보이고, 공간 차지 O, 클릭 가능. 호버하면 보이게  */
 .slider:hover .slider__arrow-left {
   transition: 400ms all ease-in-out;
   visibility: visible;
@@ -66,6 +70,7 @@ h2 {
   transition: 400ms all ease-in-out;
 }
 
+/* 넘어가는 부분 세로 스크롤 숨기고, 가로 스크롤만 활성화 포스터 가로로 스크롤 하기 위해  스크롤은 부드럽게 이동 */
 .row__posters {
   display: flex;
   overflow-y: hidden;
@@ -73,6 +78,7 @@ h2 {
   padding: 20px 0 20px 20px;
   scroll-behavior: smooth;
 }
+
 .row__posters::-webkit-scrollbar {
   display: none;
 }
