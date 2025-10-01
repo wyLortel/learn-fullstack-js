@@ -1,11 +1,12 @@
 import axios from '../../api/axios';
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import "./SearchPage.css"
 import { useDebounce } from '../../hooks/useDebounce';
 
 export default function SearchPage() {
 
+  const navigate = useNavigate();
   const [searchResults, setsearchResults] = useState([]);
 
   const useQuery = () => {
@@ -53,8 +54,8 @@ export default function SearchPage() {
             return (
               // key는 필수: 리스트 재조정 시 리액트가 항목 식별
               <div key={movie.id} className='movie'> 
-                <div className='movie_column-post'>
-                  <img
+                <div className='movie_column-post' onClick={()=>navigate(`/${movie.id}`)}>
+                  <img 
                     src={movieImageUrl}
                     alt={movie.title || movie.name}
                     className='movie__poster'
