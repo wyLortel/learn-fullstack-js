@@ -1,0 +1,110 @@
+/* 브라우저가 자동으로 넣어주는 기본 여백(margin, padding)이나 스타일은
+body에만 reset 해서는 안 없어지고,
+*(유니버설 셀렉터) 로 모든 태그에 걸어야 완전히 지워집니다. */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    background-color: #43a047;
+}
+
+.wrapper{
+    background-color: #fff;
+    /* 화면의 너비와 높이 중 더 짧은 쪽의 80% 크기로 박스의 폭을 설정하라 */
+    width: 80vmin;
+    position: absolute;
+    transform: translate(-50% , -50%);
+    top: 50%;
+    left: 50%;
+    padding: 40px 20px;
+
+}
+
+label {
+    display: block;
+}
+
+span{
+    position: relative;
+    font-size: 22px;
+    bottom: -1px;
+}
+
+.opt-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+button{
+    background-color: #43a047;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+}
+
+input[type="color"]{
+    /* 각 브라우저의 기본 버튼/테두리/그림자 같은 시스템 스타일을 제거 */
+    /* 크롬, 사파리 (WebKit 기반)
+기본 색상 박스 UI 제거 */
+    -webkit-appearance: none;
+    /* 파이어폭스
+기본 색상 박스 UI 제거 */
+    -moz-appearance: none;
+    /* 표준 CSS	브라우저 공통 지정 */
+    appearance: none;
+
+
+/*기본적으로 색상 입력창은 내부에 색상이 채워져 있음 근데 우리는 커스터마이징할 거니까 배경을 투명으로 만들어 둠 */
+    background-color: transparent;
+
+    width: 70px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch{
+    border-radius: 8px;
+    border: 4px solid #000;   
+}
+
+input[type="color"]::-moz-color-swatch{
+    border-radius: 8px;
+    border: 4px solid #000;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 여러 줄 쌓기 */
+  margin-top: 20px;
+  gap: 1px;
+}
+
+.gridRow {
+  display: flex;          /* ✅ 각 행을 가로줄로 만듦 */
+  gap: 1px;
+}
+
+.gridCol {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  transition: background-color 0.1s;
+}
+
+
+@media only screen and (max-width : 768px){
+    .gridCol{
+        height: 0.8em;
+        width: 0.8em;
+    }
+}
