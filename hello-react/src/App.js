@@ -1,7 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
-import Counter from "./Counter";
+import EventPractice from './EventPractice';
 
-const App = () => <Counter />;
-
-export default App;
+export default function App(){
+    return(
+        <EventPractice/>
+    )
+}
