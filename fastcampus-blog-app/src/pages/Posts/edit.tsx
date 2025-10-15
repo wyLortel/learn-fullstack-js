@@ -1,5 +1,11 @@
+import Footer from "components/Footer";
+import Header from "components/Header";
+
 export default function PostEdit(){
     return(
-        <h1>Post Edit Page</h1>
+        <>
+            <Header/>
+            <Footer/>
+        </>
     )
 }

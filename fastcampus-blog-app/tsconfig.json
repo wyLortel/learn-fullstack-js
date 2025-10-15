@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": "src", // src를 기준으로 설정
+    "paths": {
+      "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"]    //"paths" 옵션은 "compilerOptions" 안에 포함되어야한다 안그러면 타입스크립트가 인식못함
+    },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,7 +21,9 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
+
+
+//tsconfig파일은 타입스크립트 프로젝트에서만 사용되는 구성파일
+//이 프로젝트에 컴파일러 옵션에 설정 가능 
